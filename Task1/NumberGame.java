@@ -2,13 +2,13 @@ import java.util.Random;
 import java.util.Scanner;
 public class NumberGame{
     public static String userguess(int randomnumber){
-        //Scanner scaninput = new Scanner(System.in);
         System.out.println("enter your guess for random number :");
         while (!inputscanning.hasNextInt()) {
             System.out.println("This is invalid input, please enter only numeric value or check your input again");
             inputscanning.next();         
         }
         int inputval= inputscanning.nextInt();
+        inputscanning.nextLine();
         if(0<=inputval && inputval<=100){
         if(inputval==randomnumber){
             System.out.println("you won this round keep the spirit up");
@@ -28,7 +28,6 @@ public class NumberGame{
     public static int randomvalues(){
         Random randomnum = new Random();
         int randomnumber=randomnum.nextInt(101);
-        //System.out.println(randomnumber);
         return randomnumber;
     }
     public static void gamestart(){
@@ -65,7 +64,6 @@ public class NumberGame{
         playagain();
     }
     public static void playagain(){
-        //Scanner scancontinue =new Scanner(System.in);
         System.out.println("Do you want to play again? (yes/no)");
         String usercontinue = inputscanning.nextLine();
         if(usercontinue.equals("yes")){
@@ -87,7 +85,7 @@ public class NumberGame{
             "After each round number changes",
             "Take a note that the number is between 0 to 100",
             "Score are only awarded if you win the round",
-            "At 1 try=100, 2 try=75, 3 try=50 & last try=25"
+            "Scores are as follows for 1st try=100, 2nd try=75, 3rd try=50 & last try=25"
         };
         for (int c=0; c<rules.length; c++){
             System.out.println((c+1)+"."+rules[c]);
